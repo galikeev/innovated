@@ -1,0 +1,39 @@
+.card {
+    width: 262px;
+    border: 1px solid rgba(5, 12, 38, 0.05);
+    border-radius: 10px;
+    padding: 27px 22px;
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 30px auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: rgba(255, 96, 96, 0.1);
+        &_pink {
+            background: rgba(243, 83, 170, 0.1);
+        }
+        &_viol {
+            background: rgba(197, 72, 255, 0.1);
+        }
+        &_blue {
+            background: rgba(79, 158, 252, 0.1);
+        }
+    }
+    &__title {
+        text-align: center;
+    }
+    &__text {
+        text-align: center;
+        padding: 15px 0 25px 0;
+    }
+    &__wrapper {
+        text-align: center;
+    }
+    &__btn {
+        width: 137px;
+        height: 49px;
+    }
+}

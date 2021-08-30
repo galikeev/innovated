@@ -1,0 +1,19 @@
+@import 'libs/bootstrap-reboot.min';
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300;400&display=swap');
+
+@import 'helpers/parametrs';
+@import 'helpers/variables';
+@import 'helpers/font';
+
+@import 'components/button';
+@import 'components/navigation';
+@import 'components/progress';
+@import 'components/card';
+
+@import 'pages/header';
+@import 'pages/promo';
+@import 'pages/about';
+@import 'pages/features';
+@import 'pages/services';
+
+@import 'layout/responsive';

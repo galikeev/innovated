@@ -1,0 +1,12 @@
+.btn {
+    width: 134px;
+    height: 59px;
+    background: $second;
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+    &:hover {
+        background-color: darken($second, 10%);
+        transition: 0.3s all;
+    }
+}

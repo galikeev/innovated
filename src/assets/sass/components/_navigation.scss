@@ -1,0 +1,30 @@
+.navigation {
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+    &__links {
+        margin-right: 50px;
+        position: relative;
+        a {
+            color: $main;
+            &:hover {
+                color: $second;
+                transition: 0.3s all;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 30px;
+                    left: 0px;
+                    width: 54px;
+                    height: 2px;
+                    border-radius: 25px;
+                    transition: 0.3s all;
+                    background: #3988FF;
+                }
+            }
+        }
+    }
+}

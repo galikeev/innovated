@@ -1,0 +1,91 @@
+.services {
+    &__background {
+        background: url('../img/dots_bg.svg');
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+    &__text {
+        padding-top: 25px;
+        padding-bottom: 70px;
+        width: 604px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 60px;
+        column-gap: 30px;
+    }
+    &__block {
+        width: 360px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(104px);
+        &:hover {
+            background-image: url('../img/web_dev.jpg');
+        }
+        &:nth-child(2) {
+            &:hover {
+                background-image: url('../img/product_brand.jpg');
+            }
+        }
+        &:nth-child(3) {
+            &:hover {
+                background-image: url('../img/website_sol.jpg');
+            }
+        }
+        &:nth-child(4) {
+            &:hover {
+                background-image: url('../img/clean_code.jpg');
+            }
+        }
+        &:nth-child(5) {
+            &:hover {
+                background-image: url('../img/digital.jpg');
+            }
+        }
+        &:nth-child(6) {
+            &:hover {
+                background-image: url('../img/support.jpg');
+            }
+        }
+    }
+    &__card {
+        background: #F3F3F3;
+        border-radius: 10px;
+        padding: 60px 20px;
+        &:hover {
+            color: #FFFFFF;
+            background: linear-gradient(180deg, #D93059 0%, #D95B7A 100%);
+        }
+    }
+    &__circle {
+        margin: auto;
+        margin-top: 40px;
+        display: flex;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        cursor: pointer;
+    }
+    &__arrow {
+        position: relative;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-top: 4px solid #050C26;
+        border-right: 4px solid #050C26;
+        transform: rotate(135deg);
+        &:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 23px;
+            top: -5px;
+            left: 7px;
+            background: #050C26;
+            transform: rotate(-135deg);
+        }
+    }
+}
