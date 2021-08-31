@@ -90,10 +90,70 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 
 
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_modules_changecolor__WEBPACK_IMPORTED_MODULE_0__["default"])();
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/changecolor.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/changecolor.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const changeColor = () => {};
+
+/* harmony default export */ __webpack_exports__["default"] = (changeColor);
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const tabs = () => {
+  const header = document.querySelector('.tabs'),
+        tabs = document.querySelectorAll('li'),
+        content = document.querySelectorAll('.tabs__wrapper');
+  header.addEventListener('click', e => {
+    let target = e.target;
+    /* тот элемент на котором происходит событие (клик) */
+
+    if (target && target.tagName === 'LI') {
+      /* Если тот элемент на который кликнули существует и это тэг li */
+      tabs.forEach(btn => btn.classList.remove('active'));
+      /* Убираем класс активности со всех элементов в меню */
+
+      target.classList.add('active');
+      /* А элементу на котором происходит событие (клик) добавляем класс активности */
+
+      content.forEach(item => item.classList.toggle('flex'));
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (tabs);
 
 /***/ })
 

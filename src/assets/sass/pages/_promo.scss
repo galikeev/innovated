@@ -1,17 +1,22 @@
 .promo {
-    &__block {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
         padding-top: 140px;
-        padding-bottom: 116px;
+    }
+    &__block {
+        padding-bottom: 230px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width: 540px;
+        width: 50%;
     }
     &__title {
         font-size: 69px;
         font-family: Lato;
         line-height: 120%;
         padding-bottom: 25px;
+        color: $title;
         span {
             font-family: Lato;
             color: $second;
@@ -46,8 +51,10 @@
         }
     }
     &__img {
-        width: 170%;
+        width: 50%;
+        position: relative;
         img {
+            // position: absolute;
             width: 100%;
         }
     }

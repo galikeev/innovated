@@ -1,21 +1,29 @@
 .fz-16 {
     font-family: Poppins;
     font-size: 16px;
+    color: $main;
 }
 
 .fz-18 {
     font-family: Poppins;
     font-size: 18px;
-    line-height: 160%;
+    color: $main;
+}
+
+.fz-20 {
+    font-family: Poppins;
+    font-size: 20px;
+    color: $main;
 }
 
 .fz-25 {
     font-family: Lato;
     font-size: 25px;
+    color: $title;
 }
 
 .fz-43 {
     font-family: Lato;
     font-size: 43px;
-    line-height: 120%;
+    color: $title;
 }

@@ -5,15 +5,18 @@
 @import 'helpers/variables';
 @import 'helpers/font';
 
+@import 'components/title';
 @import 'components/button';
 @import 'components/navigation';
 @import 'components/progress';
 @import 'components/card';
+@import 'components/tabs';
 
 @import 'pages/header';
 @import 'pages/promo';
 @import 'pages/about';
 @import 'pages/features';
 @import 'pages/services';
+@import 'pages/price';
 
 @import 'layout/responsive';
