@@ -97,7 +97,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 /* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
-/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/_carousel */ "./src/js/modules/_carousel.js");
+/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/carousel */ "./src/js/modules/carousel.js");
 
 
 
@@ -111,10 +111,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/_carousel.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/_carousel.js ***!
-  \*************************************/
+/***/ "./src/js/modules/carousel.js":
+/*!************************************!*\
+  !*** ./src/js/modules/carousel.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
