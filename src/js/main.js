@@ -1,5 +1,6 @@
-import changeColor from "./modules/changecolor";
 import tabs from "./modules/tabs";
+import changeColor from "./modules/changecolor";
+import carousel from "./modules/_carousel";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -7,4 +8,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
     tabs();
     changeColor();
+    carousel();
 });

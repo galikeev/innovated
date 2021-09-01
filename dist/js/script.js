@@ -95,16 +95,61 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
+/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/_carousel */ "./src/js/modules/_carousel.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_modules_changecolor__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_changecolor__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_modules_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/_carousel.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/_carousel.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const carousel = () => {
+  const width = window.getComputedStyle(document.querySelector('.carousel__inner')).width,
+        slides = document.querySelectorAll('.carousel__item'),
+        slidesField = document.querySelector('.carousel__slides'),
+        dots = document.querySelectorAll('.carousel__indicators li');
+  slidesField.style.width = 50 * slides.length + '%';
+  slides.forEach(slide => {
+    slide.style.width = width;
+  });
+  let offset = 0;
+  /* переменная отвечает за смещение главного блока slidesField */
+
+  let slideIndex = 0;
+  /* активный слайд */
+  // const sliderId = document.getAttribute('id');
+
+  dots.forEach(item => {
+    item.addEventListener('click', e => {
+      const slideTo = e.target.getAttribute('data-slide-to');
+      slideIndex = slideTo;
+      offset = +width.replace(/\D/g, '') / 2 * slideTo;
+      slidesField.style.transform = `translateX(-${offset}px)`;
+      slidesField.style.transition = `0.5s all`;
+      dots.forEach(dot => dot.classList.remove('active-dots'));
+      dots[slideIndex].classList.add('active-dots');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (carousel);
 
 /***/ }),
 
@@ -117,7 +162,60 @@ window.addEventListener('DOMContentLoaded', () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const changeColor = () => {};
+const changeColor = () => {
+  const block = document.querySelectorAll('.services__block');
+  let images = {
+    web: 'assets/img/web_dev.jpg',
+    product: 'assets/img/product_brand.jpg',
+    website: 'assets/img/website_sol.jpg',
+    clean: 'assets/img/clean_code.jpg',
+    digital: 'assets/img/digital.jpg',
+    support: 'assets/img/support.jpg'
+  };
+  block.forEach(item => {
+    item.style.cssText = `background: rgba(0, 0, 0, 0.6)`;
+  });
+
+  function mouseOver() {
+    block.forEach((item, i) => {
+      item.addEventListener('mouseover', () => {
+        switch (i) {
+          case 0:
+            item.style.cssText = `background-image: url(${images.web});
+                        `;
+            break;
+
+          case 1:
+            item.style.cssText = `background-image: url(${images.product})`;
+            break;
+
+          case 2:
+            item.style.cssText = `background-image: url(${images.website})`;
+            break;
+
+          case 3:
+            item.style.cssText = `background-image: url(${images.clean})`;
+            break;
+
+          case 4:
+            item.style.cssText = `background-image: url(${images.digital})`;
+            break;
+
+          case 5:
+            item.style.cssText = `background-image: url(${images.support})`;
+            break;
+        }
+      });
+    });
+  }
+
+  mouseOver();
+  block.forEach(item => {
+    item.addEventListener('mouseout', () => {
+      item.style.cssText = `background: rgba(0, 0, 0, 0.6)`;
+    });
+  });
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (changeColor);
 

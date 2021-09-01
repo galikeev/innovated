@@ -1,0 +1,74 @@
+.carousel {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #050C26;
+    border-radius: 10px;
+    // width: 900px;
+    position: relative;
+    &__indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
+        li {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 20px;
+            height: 11px;
+            margin-right: 7px;
+            margin-left: 7px;
+            cursor: pointer;
+            background-color: #3988FF;
+            background-clip: padding-box;
+            opacity: .1;
+            border-radius: 20px;
+            transition: opacity .6s ease;
+        }
+        .active-dots {
+            width: 40px;
+            opacity: 1;
+        }
+    }
+    &__inner {
+        width: 100%;
+        height: 375px;
+        position: relative;
+        overflow: hidden;
+    }
+    &__slides {
+        height: 100%;
+        display: flex;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    &__text {
+        display: flex;
+        align-items: flex-start;
+        p {
+            padding-top: 10px;
+            color: $title;
+            font-style: italic;
+        }
+    }
+    &__wrapper {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+    }
+    &__block {
+        padding-left: 30px;
+    }
+    &__user {
+        color: $title;
+    }
+}

@@ -528,16 +528,18 @@ li {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 140px;
 }
 .tabs__block {
   width: 360px;
   height: 613px;
   box-shadow: 0px 4px 30px rgba(153, 153, 153, 0.14);
   border-radius: 10px;
+  transition: all 0.8s linear 0s;
 }
 .tabs__block:hover {
+  transition-delay: 0.5s;
   background: linear-gradient(180deg, #D9315A 0%, #F3678A 100%);
-  transition: 0.3s all;
 }
 .tabs__block:hover h3, .tabs__block:hover div, .tabs__block:hover p {
   color: #fff;
@@ -597,6 +599,80 @@ li {
 
 .flex {
   display: flex;
+}
+
+.carousel {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #050C26;
+  border-radius: 10px;
+  position: relative;
+}
+.carousel__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+.carousel__indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 20px;
+  height: 11px;
+  margin-right: 7px;
+  margin-left: 7px;
+  cursor: pointer;
+  background-color: #3988FF;
+  background-clip: padding-box;
+  opacity: 0.1;
+  border-radius: 20px;
+  transition: opacity 0.6s ease;
+}
+.carousel__indicators .active-dots {
+  width: 40px;
+  opacity: 1;
+}
+.carousel__inner {
+  width: 100%;
+  height: 375px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel__slides {
+  height: 100%;
+  display: flex;
+}
+.carousel__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.carousel__text {
+  display: flex;
+  align-items: flex-start;
+}
+.carousel__text p {
+  padding-top: 10px;
+  color: #050C26;
+  font-style: italic;
+}
+.carousel__wrapper {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+.carousel__block {
+  padding-left: 30px;
+}
+.carousel__user {
+  color: #050C26;
 }
 
 .header__wrapper {
@@ -712,11 +788,8 @@ li {
 .services__block {
   width: 360px;
   border: none;
-  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(104px);
-}
-.services__block:hover {
-  background-image: url("../img/web_dev.jpg");
+  transition: all 0.8s linear 0s;
 }
 .services__block:hover h3, .services__block:hover p {
   transition: 0.3s all;
@@ -725,21 +798,6 @@ li {
 .services__block:hover .services__card {
   color: #FFFFFF;
   background: linear-gradient(180deg, #D93059 0%, #D95B7A 100%);
-}
-.services__block:nth-child(2):hover {
-  background-image: url("../img/product_brand.jpg");
-}
-.services__block:nth-child(3):hover {
-  background-image: url("../img/website_sol.jpg");
-}
-.services__block:nth-child(4):hover {
-  background-image: url("../img/clean_code.jpg");
-}
-.services__block:nth-child(5):hover {
-  background-image: url("../img/digital.jpg");
-}
-.services__block:nth-child(6):hover {
-  background-image: url("../img/support.jpg");
 }
 .services__card {
   background: #F3F3F3;
@@ -788,6 +846,13 @@ li {
   color: #575859;
   text-align: center;
   padding-bottom: 15px;
+}
+
+.clients__carousel {
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 140px;
+  background-image: url("../img/slider_bg.svg");
 }
 
 @media (max-width: 1200px) {

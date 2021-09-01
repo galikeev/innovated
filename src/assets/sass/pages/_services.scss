@@ -20,10 +20,11 @@
     &__block {
         width: 360px;
         border: none;
-        background: rgba(0, 0, 0, 0.6);
+        // background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(104px);
+        transition: all .8s linear 0s;
         &:hover {
-            background-image: url('../img/web_dev.jpg');
+            // background-image: url('../img/web_dev.jpg');
             h3, p {
                 transition: .3s all;
                 color: #fff;
@@ -33,31 +34,31 @@
                 background: linear-gradient(180deg, #D93059 0%, #D95B7A 100%);
             }
         }
-        &:nth-child(2) {
-            &:hover {
-                background-image: url('../img/product_brand.jpg');
-            }
-        }
-        &:nth-child(3) {
-            &:hover {
-                background-image: url('../img/website_sol.jpg');
-            }
-        }
-        &:nth-child(4) {
-            &:hover {
-                background-image: url('../img/clean_code.jpg');
-            }
-        }
-        &:nth-child(5) {
-            &:hover {
-                background-image: url('../img/digital.jpg');
-            }
-        }
-        &:nth-child(6) {
-            &:hover {
-                background-image: url('../img/support.jpg');
-            }
-        }
+        // &:nth-child(2) {
+        //     &:hover {
+        //         background-image: url('../img/product_brand.jpg');
+        //     }
+        // }
+        // &:nth-child(3) {
+        //     &:hover {
+        //         background-image: url('../img/website_sol.jpg');
+        //     }
+        // }
+        // &:nth-child(4) {
+        //     &:hover {
+        //         background-image: url('../img/clean_code.jpg');
+        //     }
+        // }
+        // &:nth-child(5) {
+        //     &:hover {
+        //         background-image: url('../img/digital.jpg');
+        //     }
+        // }
+        // &:nth-child(6) {
+        //     &:hover {
+        //         background-image: url('../img/support.jpg');
+        //     }
+        // }
     }
     &__card {
         background: #F3F3F3;
