@@ -26,10 +26,11 @@
         padding-bottom: 35px;
         max-width: 490px;
     }
-    &__btn {
+    &__play {
         display: flex;
         align-items: center;
         color: $title;
+        cursor: pointer;
     }
     &__icon {
         display: flex;
@@ -39,12 +40,8 @@
         height: 70px;
         background: #FFFFFF;
         border-radius: 50%;
-        padding-top: 24px;
-        padding-bottom: 24px;
         margin-right: 25px;
         div {
-            width: 0; 
-            height: 0;
             border-top: 11px solid transparent;
             border-left: 20px solid #1B45DA;
             border-bottom: 11px solid transparent;

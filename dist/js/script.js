@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
 /* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
 /* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/carousel */ "./src/js/modules/carousel.js");
+/* harmony import */ var _modules_playVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/playVideo */ "./src/js/modules/playVideo.js");
+
 
 
 
@@ -107,6 +109,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_changecolor__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules_playVideo__WEBPACK_IMPORTED_MODULE_3__["default"])('.promo__play', '.overlay');
 });
 
 /***/ }),
@@ -218,6 +221,67 @@ const changeColor = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (changeColor);
+
+/***/ }),
+
+/***/ "./src/js/modules/playVideo.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/playVideo.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const playVideo = (triggers, overlaySelector) => {
+  const btn = document.querySelector(triggers),
+        overlay = document.querySelector(overlaySelector),
+        close = document.querySelector('.close');
+  let player;
+
+  function bindTriggers() {
+    btn.addEventListener('click', () => {
+      if (document.querySelector('iframe#frame')) {
+        overlay.style.display = 'flex';
+      } else {
+        const path = btn.getAttribute('data-url');
+        createPlayer(path);
+      }
+    });
+  }
+
+  function closeBtn() {
+    close.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      player.stopVideo();
+    });
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) {
+        overlay.style.display = 'none';
+        player.stopVideo();
+      }
+    });
+  }
+
+  function createPlayer(url) {
+    player = new YT.Player('player', {
+      height: '100%',
+      width: '100%',
+      videoId: `${url}`
+    });
+    console.log(player);
+    overlay.style.display = 'flex';
+  }
+
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  bindTriggers();
+  closeBtn();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (playVideo);
 
 /***/ }),
 
