@@ -1,0 +1,57 @@
+.footer {
+    background: $title;
+    &__wrapper {
+        padding-top: 75px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        &_318px {
+            max-width: 318px;
+        }
+    }
+    &__logo {
+        a {
+            color: #FFFFFF;
+        }
+    }
+    &__text {
+        padding-top: 30px;
+        color: #FFFFFF;
+        font-weight: 300;
+    }
+    &__title {
+        color: #FFFFFF;
+        font-weight: 300;
+        padding-bottom: 25px;
+    }
+    &__subtitle {
+        padding-bottom: 10px;
+        font-weight: 300;
+        color: #FFFFFF;
+    }
+    &__icons {
+        margin-bottom: 30px;
+    }
+    &__icon {
+        margin-right: 25px;
+    }
+    &__btn {
+        margin-bottom: 55px;
+    }
+    hr {
+        opacity: 0.1;
+        border: 1px solid #FFFFFF;
+    }
+    &__copyright {
+        color: $main;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
