@@ -245,6 +245,8 @@
         }
         &__text {
             padding-bottom: 50px;
+            width: 100%;
+            text-align: center;
         }
         &__wrapper {
             padding-bottom: 80px;
@@ -311,4 +313,135 @@
             margin-right: 15px;
         }
     }
-}   
+}
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    header {
+        display: none;
+    }
+    .title {
+        font-size: 52px;
+    }
+    .text {
+        padding-bottom: 30px;
+    }
+    .fz-16 {
+        font-size: 13px;
+    }
+    .fz-18 {
+        font-size: 13px;
+    }
+    .fz-20 {
+        font-size: 15px;
+    }
+    .fz-25 {
+        font-size: 18px;
+    }
+    .fz-43 {
+        font-size: 30px;
+    }
+    .promo {
+        &__title {
+            text-align: center;
+            font-size: 52px;
+        }
+        &__text {
+            text-align: center;
+        }
+        &__play {
+            justify-content: center;
+        }
+    }
+    .about {
+        &__wrapper {
+            padding-bottom: 70px;
+        }
+    }
+    .progress {
+        margin-right: 0;
+        &__item {
+            grid-template-columns: 360px;
+        }
+        &__line {
+            width: 100%;
+        }
+    }
+    .features {
+        &__wrapper {
+            padding-bottom: 70px;
+        }
+    }
+    .card {
+        width: 300px;
+        &__btn {
+            width: 120px;
+        }
+    }
+    .services {
+        &__wrapper {
+            justify-content: center;
+            row-gap: 20px;
+            padding-bottom: 70px
+        }
+    }
+    .tabs {
+        &__wrapper {
+            padding-bottom: 70px;
+        }
+    }
+    .clients {
+        &__carousel {
+            margin-bottom: 70px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
+    .carousel {
+        &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__text {
+            height: 140px;
+            p {
+                padding-top: 0;
+            }
+        }
+        &__block {
+            padding-left: 5px;
+        }
+        &__img {
+            width: 50px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .footer {
+        &__wrapper {
+            padding-top: 30px;
+            display: block;
+            margin: 0 25%;
+            text-align: center;
+        }
+        &__block {
+            &_318px {
+                display: none;
+            }
+        }
+        &__btn {
+            margin: 0 auto 15px auto;
+        }
+    }
+    .menu {
+        display: block;
+        &_scroll {
+            overflow: hidden;
+        }
+    }
+
+}

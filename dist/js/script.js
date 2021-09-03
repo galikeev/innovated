@@ -101,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_playVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/playVideo */ "./src/js/modules/playVideo.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 /* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+
 
 
 
@@ -116,6 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_playVideo__WEBPACK_IMPORTED_MODULE_3__["default"])('.promo__play', '.overlay');
   Object(_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 
 /***/ }),
@@ -229,6 +232,44 @@ const changeColor = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (changeColor);
+
+/***/ }),
+
+/***/ "./src/js/modules/hamburger.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/hamburger.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const hamburger = () => {
+  const menu = document.querySelector('.menu'),
+        menuLinks = document.querySelectorAll('.hamburger__links'),
+        hamburger = document.querySelector('.hamburger'),
+        bodyScroll = document.querySelector('body');
+  menu.addEventListener('click', () => {
+    menu.classList.toggle('menu_active');
+    hamburger.classList.toggle('hamburger_active');
+    bodyScroll.classList.toggle('menu_scroll');
+  });
+  menuLinks.forEach(item => {
+    item.addEventListener('click', () => {
+      menu.classList.toggle('menu_active');
+      hamburger.classList.toggle('hamburger_active');
+    });
+  });
+  hamburger.addEventListener('click', e => {
+    if (e.target === hamburger) {
+      menu.classList.toggle('menu_active');
+      hamburger.classList.toggle('hamburger_active');
+      bodyScroll.classList.toggle('menu_scroll');
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (hamburger);
 
 /***/ }),
 
