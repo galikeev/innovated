@@ -2,10 +2,153 @@
     .container {
         width: 960px;
     }
+    .title {
+        font-size: 65px;
+    }
+    .fz-25 {
+        font-size: 23px;
+    }
+    .fz-43 {
+        font-size: 40px;
+    }
+    .promo {
+        &__title {
+            font-size: 65px;
+            line-height: 110%;
+        }
+        &__wrapper {
+            padding-top: 110px;
+        }
+        &__block {
+            padding-bottom: 180px;
+        }
+    }
+    .about {
+        &__wrapper {
+            padding-bottom: 120px;
+        }
+    }
+    .progress {
+        grid-template-rows: repeat(4, minmax(50px, auto));
+        margin-right: 10px;
+    }
+    .features {
+        &__wrapper {
+            justify-content: center;
+            padding-bottom: 120px;
+            gap: 20px;
+        }
+    }
+    .card {
+        width: 310px;
+    }
+    .services {
+        &__background {
+            background-position: top right -50px;
+        }
+        &__wrapper {
+            padding-bottom: 120px;
+            row-gap: 40px;
+        }
+        &__block {
+            width: 300px;
+        }
+    }
+    .price {
+        &__subtitle {
+            font-size: 19px;
+        }
+        &__title {
+            font-size: 33px;
+        }
+    }
+    .tabs {
+        &__wrapper {
+            justify-content: center;
+            padding-bottom: 120px;
+            gap: 20px;
+        }
+        &__block {
+            height: 570px;
+        }
+        &__title {
+            height: 105px;
+        }
+        &__cost {
+            padding-top: 35px;
+        }
+    }
 }
 @media (max-width: 992px) {
     .container {
         width: 720px;
+    }
+    .title {
+        font-size: 60px;
+    }
+    .text {
+        padding-bottom: 50px;
+    }
+    .fz-16 {
+        font-size: 14px;
+    }
+    .fz-18 {
+        font-size: 16px;
+    }
+    .fz-20 {
+        font-size: 18px;
+    }
+    .fz-25 {
+        font-size: 21px;
+    }
+    .fz-43 {
+        font-size: 37px;
+    }
+    .navigation {
+        &__links {
+            margin-right: 25px;
+        }
+    }
+    .btn {
+        height: 47px;
+    }
+    .promo {
+        &__title {
+            font-size: 58px;
+            line-height: 110%;
+        }
+        &__wrapper {
+            padding-top: 70px;
+        }
+        &__block {
+            padding-bottom: 100px;
+        }
+    }
+    .about {
+        &__wrapper {
+            padding-bottom: 100px;
+        }
+        &__img {
+            margin-right: 40px;
+        }
+    }
+    .services {
+        &__wrapper {
+            justify-content: space-between;
+            padding-bottom: 100px;
+        }
+        &__block {
+            width: 320px;
+        }
+    }
+    .tabs {
+        &__wrapper {
+            padding-bottom: 100px;
+        }
+        &__block {
+            width: 320px;
+            height: 540px;
+        }
     }
 }   
 @media (max-width: 768px) {

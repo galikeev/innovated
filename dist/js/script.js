@@ -310,6 +310,7 @@ const playVideo = (triggers, overlaySelector) => {
     btn.addEventListener('click', () => {
       if (document.querySelector('iframe#frame')) {
         overlay.style.display = 'flex';
+        overlay.classList.add('animate__animated', 'animate__fadeIn');
       } else {
         const path = btn.getAttribute('data-url');
         createPlayer(path);
@@ -338,6 +339,7 @@ const playVideo = (triggers, overlaySelector) => {
     });
     console.log(player);
     overlay.style.display = 'flex';
+    overlay.classList.add('animate__animated', 'animate__fadeIn');
   }
 
   const tag = document.createElement('script');
