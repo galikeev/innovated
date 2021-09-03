@@ -722,10 +722,10 @@ li {
   height: 100%;
   display: flex;
 }
-.carousel__item {
+.carousel__content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
 }
 .carousel__text {
@@ -1120,6 +1120,10 @@ li {
     margin-right: 40px;
   }
 
+  .features__wrapper {
+    padding-bottom: 100px;
+  }
+
   .services__wrapper {
     justify-content: space-between;
     padding-bottom: 100px;
@@ -1139,5 +1143,153 @@ li {
 @media (max-width: 768px) {
   .container {
     width: 540px;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+
+  .text {
+    padding-bottom: 50px;
+  }
+
+  .fz-16 {
+    font-size: 14px;
+  }
+
+  .fz-18 {
+    font-size: 14px;
+  }
+
+  .fz-20 {
+    font-size: 16px;
+  }
+
+  .fz-25 {
+    font-size: 19px;
+  }
+
+  .fz-43 {
+    font-size: 33px;
+  }
+
+  .btn {
+    width: 70px;
+    height: 40px;
+  }
+  .btn_transperent {
+    width: 110px;
+    height: 50px;
+  }
+
+  .navigation__links {
+    margin-right: 15px;
+  }
+
+  .promo__title {
+    font-size: 55px;
+  }
+  .promo__wrapper {
+    padding-top: 50px;
+  }
+  .promo__block {
+    width: 100%;
+    padding-bottom: 70px;
+  }
+  .promo__img {
+    display: none;
+  }
+
+  .about__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 80px;
+  }
+  .about__img {
+    width: 50%;
+    padding-bottom: 15px;
+  }
+
+  .features__wrapper {
+    padding-bottom: 80px;
+  }
+
+  .card {
+    width: 260px;
+  }
+  .card__img {
+    width: 130px;
+    height: 130px;
+  }
+  .card__btn {
+    width: 100px;
+    height: 45px;
+  }
+
+  .services__background {
+    background-position: top;
+  }
+  .services__title {
+    text-align: center;
+  }
+  .services__text {
+    padding-bottom: 50px;
+  }
+  .services__wrapper {
+    padding-bottom: 80px;
+  }
+
+  .tabs {
+    width: 270px;
+  }
+  .tabs__wrapper {
+    padding-bottom: 80px;
+  }
+
+  .card {
+    width: 255px;
+  }
+
+  .clients__carousel {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 80px;
+  }
+
+  .carousel__text img {
+    width: 25px;
+  }
+  .carousel__inner {
+    height: 330px;
+  }
+  .carousel__indicators li {
+    width: 15px;
+    height: 9px;
+  }
+  .carousel__indicators .active-dots {
+    width: 30px;
+    opacity: 1;
+  }
+
+  .footer__title {
+    padding-bottom: 15px;
+  }
+  .footer__wrapper {
+    padding-top: 50px;
+  }
+  .footer__block_318px {
+    max-width: inherit;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .footer__btn {
+    width: 100px;
+    margin-bottom: 35px;
+  }
+  .footer__icons {
+    margin-bottom: 18px;
+  }
+  .footer__icon {
+    margin-right: 15px;
   }
 }

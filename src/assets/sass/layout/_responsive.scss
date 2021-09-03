@@ -132,6 +132,11 @@
             margin-right: 40px;
         }
     }
+    .features {
+        &__wrapper {
+            padding-bottom: 100px;
+        }
+    }
     .services {
         &__wrapper {
             justify-content: space-between;
@@ -154,5 +159,156 @@
 @media (max-width: 768px) {
     .container {
         width: 540px;
+    }
+    .title {
+        font-size: 55px;
+    }
+    .text {
+        padding-bottom: 50px;
+    }
+    .fz-16 {
+        font-size: 14px;
+    }
+    .fz-18 {
+        font-size: 14px;
+    }
+    .fz-20 {
+        font-size: 16px;
+    }
+    .fz-25 {
+        font-size: 19px;
+    }
+    .fz-43 {
+        font-size: 33px;
+    }
+    .btn {
+        width: 70px;
+        height: 40px;
+        &_transperent {
+            width: 110px;
+            height: 50px;
+        }
+    }
+    .navigation {
+        &__links {
+            margin-right: 15px;
+        }
+    }
+    .promo {
+        &__title {
+            font-size: 55px;
+        }
+        &__wrapper {
+            padding-top: 50px;
+        }
+        &__block {
+            width: 100%;
+            padding-bottom: 70px;
+        }
+        &__img {
+            display: none;
+        }
+    }
+    .about {
+        &__wrapper {
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 80px;
+        }
+        &__img {
+            width: 50%;
+            padding-bottom: 15px;
+        }
+    }
+    .features {
+        &__wrapper {
+            padding-bottom: 80px;
+        }
+    }
+    .card {
+        width: 260px;
+        &__img {
+            width: 130px;
+            height: 130px;
+        }
+        &__btn {
+            width: 100px;
+            height: 45px;
+        }
+    }
+    .services {
+        &__background {
+            background-position: top;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            padding-bottom: 50px;
+        }
+        &__wrapper {
+            padding-bottom: 80px;
+        }
+    }
+    .tabs {
+        width: 270px;
+        &__wrapper {
+            padding-bottom: 80px;
+        }
+    }
+    .card {
+        width: 255px;
+    }
+    .clients {
+        &__carousel {
+            padding-right: 30px;
+            padding-left: 30px;
+            margin-bottom: 80px;
+        }
+    }
+    .carousel {
+        &__text {
+            img {
+                width: 25px;
+            }
+        }
+        &__inner {
+            height: 330px;
+        }
+        &__indicators {
+            li {
+                width: 15px;
+                height: 9px;
+            }
+            .active-dots {
+                width: 30px;
+                opacity: 1;
+            }
+        }
+    }
+    .footer {
+        &__title {
+            padding-bottom: 15px;
+        }
+        &__wrapper {
+            padding-top: 50px;
+        }
+        &__block {
+            &_318px {
+                max-width: inherit;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+        }
+        &__btn {
+            width: 100px;
+            margin-bottom: 35px;
+        }
+        &__icons {
+            margin-bottom: 18px;
+        }
+        &__icon {
+            margin-right: 15px;
+        }
     }
 }   
