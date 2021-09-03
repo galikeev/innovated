@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="background">
+    <div id="up" class="background">
         <header class="header">
             <div class="container">
                 <div class="header__wrapper">
@@ -21,16 +22,16 @@
                                 <a href="#">Home</a>
                             </li>
                             <li class="navigation__links fz-18">
-                                <a href="#">About</a>
+                                <a href="#about">About</a>
                             </li>
                             <li class="navigation__links fz-18">
-                                <a href="#">Features</a>
+                                <a href="#features">Features</a>
                             </li>
                             <li class="navigation__links fz-18">
-                                <a href="#">Services</a>
+                                <a href="#services">Services</a>
                             </li>
                             <li class="navigation__links fz-18">
-                                <a href="#">Pricing</a>
+                                <a href="#price">Pricing</a>
                             </li>
                         </ul>
                     </nav>
@@ -39,7 +40,7 @@
             </div>
         </header>
 
-        <section class="promo">
+        <section id="promo" class="promo">
             <div class="container">
                 <div class="promo__wrapper">
                     <div class="promo__block">
@@ -60,7 +61,7 @@
         </section>
     </div>
 
-    <section class="about">
+    <section id="about" class="about">
         <h2 class="about__title title">ABOUT US</h2>
         <h3 class="subtitle fz-43">Transforming brands with creativity</h3>
         <p class="text fz-18">As a rule the organization settles on the inventive and media choices. Regularly it supplies <br> supporting statistical surveying too, and may even be associated.</p>
@@ -101,7 +102,7 @@
         </div>
     </section>
 
-    <section class="features">
+    <section id="features" class="features">
         <div class="container">
             <h2 class="title">FEATURES</h2>
             <h3 class="subtitle fz-43">Transforming brands with creativity</h3>
@@ -151,7 +152,7 @@
         </div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
         <div class="services__background">
             <div class="container">
                 <h2 class="services__title fz-43">Our best services to solve</h2>
@@ -217,7 +218,7 @@
         </div>
     </section>
 
-    <section class="price">
+    <section id="price" class="price">
         <div class="container">
             <h3 class="price__subtitle">THE BEST OFFERS</h3>
         <h2 class="price__title">OUR PRICING PLAN</h2>
@@ -465,6 +466,37 @@
             <div class="close">&times;</div>
         </div>
     </div>
+
+    <div class="modal">
+        <div class="modal__wrapper">
+            <div class="h4">Our mail:</div>
+            <a href="mailto:shovasatkhira88@info" class="modal__mail">shovasatkhira88@info</a>
+            <div class="modal__block">
+                <div>Our social:</div>
+                <div class="modal__icons">
+                    <a href="#" class="modal__icon">
+                        <img src="assets/icons/facebook.svg" alt="facebook">
+                    </a>
+                    <a href="#" class="modal__icon">
+                        <img src="assets/icons/instagram.svg" alt="instagram">
+                    </a>
+                    <a href="#" class="modal__icon">
+                        <img src="assets/icons/twitter.svg" alt="twitter">
+                    </a>
+                    <a href="#" class="modal__icon">
+                        <img src="assets/icons/google.svg" alt="google">
+                    </a>
+                </div>
+                <div class="close">&times;</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#up" class="pageup">
+		<svg class="up" viewBox="0 0 26 26" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M26 0H0V26H26V0ZM4.6593 17.7519L13.1233 10.33L21.5873 17.7519L22.9059 16.2481L13.7826 8.24813L13.1233 7.67L12.464 8.24813L3.3407 16.2481L4.6593 17.7519Z" fill="#575859"/>
+		</svg>
+	</a>
 
     <script src="js/script.js"></script>
 </body>

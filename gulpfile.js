@@ -18,7 +18,7 @@ gulp.task("copy-html", () => {
 });
 
 gulp.task("styles", () => {
-  return gulp.src("./src/css/**/*")
+  return gulp.src("./src/assets/css/**/*")
               .pipe(gulp.dest("./dist/assets/css"))
               .pipe(browsersync.stream());
 });
@@ -90,13 +90,13 @@ gulp.task("watch", () => {
     gulp.watch("./src/index.html", gulp.parallel("copy-html"));
     gulp.watch("./src/js/**/*.js", gulp.parallel("build-js"));
     gulp.watch("./src/assets/sass/**/*.scss", gulp.parallel("build-sass"));
-    gulp.watch("src/assets/fonts/**/*").on('all', gulp.parallel('fonts'));
-    gulp.watch("src/assets/icons/**/*").on('all', gulp.parallel('icons'));
-    gulp.watch("src/assets/img/**/*").on('all', gulp.parallel('images'));
-    gulp.watch("src/assets/css/**/*").on('all', gulp.parallel('styles'));
+    gulp.watch("./src/assets/fonts/**/*").on('all', gulp.parallel('fonts'));
+    gulp.watch("./src/assets/icons/**/*").on('all', gulp.parallel('icons'));
+    gulp.watch("./src/assets/img/**/*").on('all', gulp.parallel('images'));
+    gulp.watch("./src/assets/css/**/*").on('all', gulp.parallel('styles'));
 });
 
-gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass"));
+gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass", "styles"));
 
 gulp.task("prod", () => {
     gulp.src("./src/assets/sass/style.scss")

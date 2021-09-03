@@ -30,7 +30,6 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
     "json-server": "^0.16.3"
   }
 }

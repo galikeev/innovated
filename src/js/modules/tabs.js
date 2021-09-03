@@ -3,7 +3,8 @@ const tabs = () => {
         tabs = document.querySelectorAll('li'),
         content = document.querySelectorAll('.tabs__wrapper');
 
-
+        content[0].classList.add('animate__animated', 'animate__fadeIn');
+        content[1].classList.add('animate__animated', 'animate__fadeIn');
 
     header.addEventListener('click', (e) => {
         let target = e.target; /* тот элемент на котором происходит событие (клик) */

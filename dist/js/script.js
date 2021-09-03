@@ -99,6 +99,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_changecolor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/changecolor */ "./src/js/modules/changecolor.js");
 /* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/carousel */ "./src/js/modules/carousel.js");
 /* harmony import */ var _modules_playVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/playVideo */ "./src/js/modules/playVideo.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+
+
 
 
 
@@ -110,6 +114,8 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_changecolor__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_modules_playVideo__WEBPACK_IMPORTED_MODULE_3__["default"])('.promo__play', '.overlay');
+  Object(_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_5__["default"])();
 });
 
 /***/ }),
@@ -224,6 +230,67 @@ const changeColor = () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const modal = () => {
+  const scrollHide = calcScroll();
+
+  function bindModal(triggerSelector, modalSelector, closeSelector) {
+    const trigger = document.querySelectorAll(triggerSelector),
+          modal = document.querySelector(modalSelector),
+          close = document.querySelector(closeSelector);
+    trigger.forEach(item => {
+      item.addEventListener('click', e => {
+        if (e.target) {
+          e.preventDefault();
+        }
+
+        modal.style.display = 'block';
+        modal.classList.add('animate__animated', 'animate__fadeIn');
+        document.body.style.overflow = 'hidden';
+        document.body.style.marginRight = `${scrollHide}px`;
+      });
+    });
+    close.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      document.body.style.marginRight = `0px`;
+    });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        document.body.style.marginRight = `0px`;
+      }
+    });
+  }
+
+  function calcScroll() {
+    let div = document.createElement('div');
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+    return scrollWidth;
+  }
+
+  bindModal('.header__btn', '.modal', '.modal__block .close');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
 /***/ "./src/js/modules/playVideo.js":
 /*!*************************************!*\
   !*** ./src/js/modules/playVideo.js ***!
@@ -285,6 +352,82 @@ const playVideo = (triggers, overlaySelector) => {
 
 /***/ }),
 
+/***/ "./src/js/modules/scrolling.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/scrolling.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const scrolling = () => {
+  const upElem = document.querySelector('.pageup');
+  /* получаем кнопку вверх */
+
+  window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 1650) {
+      /* если прокрученное расстояние больше 1650 пикселей */
+      upElem.classList.add('animate__animated', 'animate__fadeIn');
+      /* то показываем кнопку вверх с анимацией */
+
+      upElem.classList.remove('animate__fadeOut');
+    } else {
+      upElem.classList.add('animate__fadeOut');
+      /* скрываем кнопку вверх с анимацией */
+
+      upElem.classList.remove('animate__fadeIn');
+    }
+  });
+  let links = document.querySelectorAll('[href^="#"]'),
+
+  /* получаем все ссылки, которые начинаются с # (хэш) */
+  speed = 0.2;
+  /* переменная отвечает за скорость */
+
+  links.forEach(item => {
+    item.addEventListener('click', function (event) {
+      event.preventDefault();
+      let heightTop = document.documentElement.scrollTop,
+
+      /* прокрученное расстояние */
+      hash = this.hash,
+
+      /* текущий хэш (#) */
+      toBlock = document.querySelector(hash).getBoundingClientRect().top,
+
+      /* верхняя граница  */
+      start = null;
+      /* стартовая позиция */
+
+      requestAnimationFrame(step);
+
+      function step(time) {
+        /* аргумент будет передаваться автоматически */
+        if (start === null) {
+          start = time;
+        }
+
+        let progress = time - start,
+            r = toBlock < 0 ? Math.max(heightTop - progress / speed, heightTop + toBlock) : Math.min(heightTop + progress / speed, heightTop + toBlock);
+        /* отвечает за количество пикселей, которые необходимо пролистать в течение анимации */
+
+        document.documentElement.scrollTo(0, r);
+
+        if (r != heightTop + toBlock) {
+          requestAnimationFrame(step);
+        } else {
+          location.hash = hash;
+        }
+      }
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (scrolling);
+
+/***/ }),
+
 /***/ "./src/js/modules/tabs.js":
 /*!********************************!*\
   !*** ./src/js/modules/tabs.js ***!
@@ -298,6 +441,8 @@ const tabs = () => {
   const header = document.querySelector('.tabs'),
         tabs = document.querySelectorAll('li'),
         content = document.querySelectorAll('.tabs__wrapper');
+  content[0].classList.add('animate__animated', 'animate__fadeIn');
+  content[1].classList.add('animate__animated', 'animate__fadeIn');
   header.addEventListener('click', e => {
     let target = e.target;
     /* тот элемент на котором происходит событие (клик) */
