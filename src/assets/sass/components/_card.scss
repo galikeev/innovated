@@ -2,7 +2,25 @@
     width: 262px;
     border: 1px solid rgba(5, 12, 38, 0.05);
     border-radius: 10px;
-    padding: 27px 22px;
+    padding: 27px 20px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    &__face {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &_back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 27px 20px 0 20px;
+            transform: rotateY(180deg);
+        }
+    }
     &__img {
         display: flex;
         justify-content: center;
@@ -36,4 +54,7 @@
         width: 137px;
         height: 49px;
     }
+}
+.is-flipped {
+    transform: rotateY(180deg);
 }

@@ -102,6 +102,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 /* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_cardFlip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/cardFlip */ "./src/js/modules/cardFlip.js");
+
 
 
 
@@ -119,7 +121,30 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  Object(_modules_cardFlip__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/cardFlip.js":
+/*!************************************!*\
+  !*** ./src/js/modules/cardFlip.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const cardFlip = () => {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cardFlip);
 
 /***/ }),
 
