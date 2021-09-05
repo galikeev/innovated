@@ -48,6 +48,8 @@ const modal = () => {
     }
 
     bindModal('.header__btn', '.modal', '.modal__block .close');
+    bindModal('.tabs__btn', '.modal', '.modal__block .close');
+    bindModal('.footer__btn', '.modal', '.modal__block .close');
 };
 
 export default modal;

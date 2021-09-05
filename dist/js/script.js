@@ -121,7 +121,8 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_modules_cardFlip__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  Object(_modules_cardFlip__WEBPACK_IMPORTED_MODULE_7__["default"])('.card', 'y-flipped');
+  Object(_modules_cardFlip__WEBPACK_IMPORTED_MODULE_7__["default"])('.services__content', 'x-flipped');
 });
 
 /***/ }),
@@ -135,11 +136,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const cardFlip = () => {
-  const cards = document.querySelectorAll('.card');
+const cardFlip = (cardSelector, classToggle) => {
+  const cards = document.querySelectorAll(cardSelector);
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
+      card.classList.toggle(classToggle);
     });
   });
 };
@@ -353,6 +354,8 @@ const modal = () => {
   }
 
   bindModal('.header__btn', '.modal', '.modal__block .close');
+  bindModal('.tabs__btn', '.modal', '.modal__block .close');
+  bindModal('.footer__btn', '.modal', '.modal__block .close');
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);

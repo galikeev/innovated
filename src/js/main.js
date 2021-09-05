@@ -18,5 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
     modal();
     scrolling();
     hamburger();
-    cardFlip();
+    cardFlip('.card', 'y-flipped');
+    cardFlip('.services__content', 'x-flipped');
 });

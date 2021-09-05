@@ -22,7 +22,9 @@
         border: none;
         // background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(104px);
-        transition: all .8s linear 0s;
+        border-radius: 10px;
+        padding: 27px 20px;
+        cursor: pointer;
         &:hover {
             // background-image: url('../img/web_dev.jpg');
             h3, p {
@@ -60,10 +62,28 @@
         //     }
         // }
     }
+    &__content {
+        transition: all .8s linear 0s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
     &__card {
         background: #F3F3F3;
         border-radius: 10px;
         padding: 60px 20px;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &_back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateX(180deg);
+        }
     }
     &__circle {
         margin: auto;
@@ -94,4 +114,7 @@
             transform: rotate(-135deg);
         }
     }
+}
+.x-flipped {
+    transform: rotateX(180deg);
 }

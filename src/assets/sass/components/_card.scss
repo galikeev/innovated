@@ -3,11 +3,12 @@
     border: 1px solid rgba(5, 12, 38, 0.05);
     border-radius: 10px;
     padding: 27px 20px;
-    transition: transform 1s;
+    transition: 0.8s all;
     transform-style: preserve-3d;
     cursor: pointer;
     &__face {
         position: relative;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -17,7 +18,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            padding: 27px 20px 0 20px;
+            padding: 27px 20px 27px 20px;
             transform: rotateY(180deg);
         }
     }
@@ -55,6 +56,6 @@
         height: 49px;
     }
 }
-.is-flipped {
+.y-flipped {
     transform: rotateY(180deg);
 }

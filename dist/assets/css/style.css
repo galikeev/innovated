@@ -362,6 +362,7 @@ li {
   display: none;
   width: 100%;
   height: 100%;
+  z-index: 16;
   top: 0;
   left: 0;
   right: 0;
@@ -544,12 +545,13 @@ li {
   border: 1px solid rgba(5, 12, 38, 0.05);
   border-radius: 10px;
   padding: 27px 20px;
-  transition: transform 1s;
+  transition: 0.8s all;
   transform-style: preserve-3d;
   cursor: pointer;
 }
 .card__face {
   position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -560,7 +562,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 27px 20px 0 20px;
+  padding: 27px 20px 27px 20px;
   transform: rotateY(180deg);
 }
 .card__img {
@@ -597,7 +599,7 @@ li {
   height: 49px;
 }
 
-.is-flipped {
+.y-flipped {
   transform: rotateY(180deg);
 }
 
@@ -882,7 +884,9 @@ li {
   width: 360px;
   border: none;
   backdrop-filter: blur(104px);
-  transition: all 0.8s linear 0s;
+  border-radius: 10px;
+  padding: 27px 20px;
+  cursor: pointer;
 }
 .services__block:hover h3, .services__block:hover p {
   transition: 0.3s all;
@@ -892,10 +896,28 @@ li {
   color: #FFFFFF;
   background: linear-gradient(180deg, #D93059 0%, #D95B7A 100%);
 }
+.services__content {
+  transition: all 0.8s linear 0s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
 .services__card {
   background: #F3F3F3;
   border-radius: 10px;
   padding: 60px 20px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.services__card_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateX(180deg);
 }
 .services__circle {
   margin: auto;
@@ -925,6 +947,10 @@ li {
   left: 7px;
   background: #050C26;
   transform: rotate(-135deg);
+}
+
+.x-flipped {
+  transform: rotateX(180deg);
 }
 
 .price__title {
