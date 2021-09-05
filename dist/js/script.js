@@ -127,6 +127,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/calcScroll.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/calcScroll.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const calcScroll = () => {
+  let div = document.createElement('div');
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.overflowY = 'scroll';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  let scrollWidth = div.offsetWidth - div.clientWidth;
+  div.remove();
+  return scrollWidth;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (calcScroll);
+
+/***/ }),
+
 /***/ "./src/js/modules/cardFlip.js":
 /*!************************************!*\
   !*** ./src/js/modules/cardFlip.js ***!
@@ -270,32 +295,40 @@ const changeColor = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _calcScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calcScroll */ "./src/js/modules/calcScroll.js");
+
+
 const hamburger = () => {
   const menu = document.querySelector('.menu'),
         menuLinks = document.querySelectorAll('.hamburger__links'),
         hamburger = document.querySelector('.hamburger'),
-        hamburgerHeader = document.querySelector('.hamburger__wrapper');
+        scrollHide = Object(_calcScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
   menu.addEventListener('click', () => {
     menu.classList.toggle('menu_active');
     hamburger.classList.toggle('hamburger_active');
-    hamburgerHeader.classList.remove('animate__animated', 'animate__fadeOutRight');
-    hamburgerHeader.classList.add('animate__animated', 'animate__fadeInRight');
-    setTimeout(() => {
-      hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
-    }, 1000);
+
+    if (hamburger.classList.contains('hamburger_active')) {
+      document.querySelector('body').style.overflow = 'hidden';
+      document.body.style.marginRight = `${scrollHide}px`;
+    } else {
+      document.querySelector('body').style.overflow = '';
+      document.body.style.marginRight = `0px`;
+    }
   });
   menuLinks.forEach(item => {
     item.addEventListener('click', () => {
       menu.classList.toggle('menu_active');
       hamburger.classList.toggle('hamburger_active');
-      hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
+      document.querySelector('body').style.overflow = '';
+      document.body.style.marginRight = `0px`;
     });
   });
   hamburger.addEventListener('click', e => {
     if (e.target === hamburger) {
       menu.classList.toggle('menu_active');
       hamburger.classList.toggle('hamburger_active');
-      hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
+      document.querySelector('body').style.overflow = '';
+      document.body.style.marginRight = `0px`;
     }
   });
 };
@@ -313,8 +346,11 @@ const hamburger = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _calcScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calcScroll */ "./src/js/modules/calcScroll.js");
+
+
 const modal = () => {
-  const scrollHide = calcScroll();
+  const scrollHide = Object(_calcScroll__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
   function bindModal(triggerSelector, modalSelector, closeSelector) {
     const trigger = document.querySelectorAll(triggerSelector),
@@ -344,18 +380,6 @@ const modal = () => {
         document.body.style.marginRight = `0px`;
       }
     });
-  }
-
-  function calcScroll() {
-    let div = document.createElement('div');
-    div.style.width = '50px';
-    div.style.height = '50px';
-    div.style.overflowY = 'scroll';
-    div.style.visibility = 'hidden';
-    document.body.appendChild(div);
-    let scrollWidth = div.offsetWidth - div.clientWidth;
-    div.remove();
-    return scrollWidth;
   }
 
   bindModal('.header__btn', '.modal', '.modal__block .close');

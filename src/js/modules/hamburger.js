@@ -1,26 +1,30 @@
+import calcScroll from "./calcScroll";
 const hamburger = () => {
 
     const menu = document.querySelector('.menu'),
         menuLinks = document.querySelectorAll('.hamburger__links'),
         hamburger = document.querySelector('.hamburger'),
-        hamburgerHeader = document.querySelector('.hamburger__wrapper');
+        scrollHide = calcScroll();
 
 
     menu.addEventListener('click', () => {
         menu.classList.toggle('menu_active');
         hamburger.classList.toggle('hamburger_active');
-        hamburgerHeader.classList.remove('animate__animated', 'animate__fadeOutRight');
-        hamburgerHeader.classList.add('animate__animated', 'animate__fadeInRight');
-        setTimeout(() => {
-            hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
-        }, 1000);
+        if (hamburger.classList.contains('hamburger_active')) {
+            document.querySelector('body').style.overflow = 'hidden';
+            document.body.style.marginRight = `${scrollHide}px`;
+        } else {
+            document.querySelector('body').style.overflow = '';
+            document.body.style.marginRight = `0px`;
+        }
     });
 
     menuLinks.forEach(item => {
         item.addEventListener('click', () => {
             menu.classList.toggle('menu_active');
             hamburger.classList.toggle('hamburger_active');
-            hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
+            document.querySelector('body').style.overflow = '';
+            document.body.style.marginRight = `0px`;
         });
     });
     
@@ -29,7 +33,8 @@ const hamburger = () => {
         if (e.target === hamburger) {
             menu.classList.toggle('menu_active');
             hamburger.classList.toggle('hamburger_active');
-            hamburgerHeader.classList.remove('animate__animated', 'animate__fadeInRight');
+            document.querySelector('body').style.overflow = '';
+            document.body.style.marginRight = `0px`;
         }
     });
 
