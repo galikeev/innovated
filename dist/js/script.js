@@ -278,19 +278,20 @@ const hamburger = () => {
   menu.addEventListener('click', () => {
     menu.classList.toggle('menu_active');
     hamburger.classList.toggle('hamburger_active');
-    bodyScroll.classList.toggle('menu_scroll');
+    bodyScroll.classList.add('menu_scroll');
   });
   menuLinks.forEach(item => {
     item.addEventListener('click', () => {
       menu.classList.toggle('menu_active');
       hamburger.classList.toggle('hamburger_active');
+      bodyScroll.classList.remove('menu_scroll');
     });
   });
   hamburger.addEventListener('click', e => {
     if (e.target === hamburger) {
       menu.classList.toggle('menu_active');
       hamburger.classList.toggle('hamburger_active');
-      bodyScroll.classList.toggle('menu_scroll');
+      bodyScroll.classList.remove('menu_scroll');
     }
   });
 };
