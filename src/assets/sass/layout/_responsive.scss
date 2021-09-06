@@ -359,11 +359,14 @@
         &__wrapper {
             padding-bottom: 70px;
         }
+        &__img {
+            margin-right: 0;
+        }
     }
     .progress {
         margin-right: 0;
         &__item {
-            grid-template-columns: 360px;
+            grid-template-columns: 310px;
         }
         &__line {
             width: 100%;
@@ -441,6 +444,12 @@
         display: block;
         &_scroll {
             overflow: hidden;
+        }
+    }
+    .overlay {
+        .video {
+            width: 90%;
+            height: 90%;
         }
     }
 

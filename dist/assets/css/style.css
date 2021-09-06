@@ -1478,12 +1478,15 @@ li {
   .about__wrapper {
     padding-bottom: 70px;
   }
+  .about__img {
+    margin-right: 0;
+  }
 
   .progress {
     margin-right: 0;
   }
   .progress__item {
-    grid-template-columns: 360px;
+    grid-template-columns: 310px;
   }
   .progress__line {
     width: 100%;
@@ -1555,5 +1558,10 @@ li {
   }
   .menu_scroll {
     overflow: hidden;
+  }
+
+  .overlay .video {
+    width: 90%;
+    height: 90%;
   }
 }
